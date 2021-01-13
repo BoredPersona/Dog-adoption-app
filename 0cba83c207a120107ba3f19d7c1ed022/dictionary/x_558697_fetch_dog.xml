@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Dog" max_length="40" name="x_558697_fetch_dog" sizeclass="2" type="collection">
+        <element label="Adoption Center" max_length="32" name="adoption_center" reference="x_558697_fetch_adoption_center" type="reference"/>
+        <element label="Age" max_length="40" name="age" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Bio" max_length="4000" name="bio" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Breed" max_length="40" name="breed" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="German Shepherd" value="german_shepherd"/>
+                <element inactive_on_update="false" label="Labrador" value="labrador"/>
+                <element inactive_on_update="false" label="Mix" value="mix"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Picture" max_length="1024" name="image" type="user_image"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Neutred" max_length="40" name="neutred" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Shots" max_length="40" name="shots" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Active" value="active"/>
+                <element inactive_on_update="false" label="Adopted" value="adopted"/>
+                <element inactive_on_update="false" label="Pending" value="pending"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="adoption_center"/>
+        </index>
+    </element>
+</database>
